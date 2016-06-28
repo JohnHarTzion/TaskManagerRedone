@@ -1,0 +1,12 @@
+<%= form_for Pending.new do |f| %>
+  <%= f.label :task_name %> <br>
+  <%= f.text_field :task_name %><br>
+
+  <%= f.label :task_time_in_minutes %><br>
+  <%= f.text_field :task_time_in_minutes %><br>
+
+  <%= f.label :status %><br>
+  <%= f.text_field :status %><br>
+
+  <%= f.submit %>
+<% end %>

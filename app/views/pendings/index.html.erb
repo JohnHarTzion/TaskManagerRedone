@@ -1,0 +1,20 @@
+<table>
+	<thead>
+		<tr>
+			<td>Task Name</td>
+			<td>Task Time</td>
+			<td>Task Status</td>
+		</tr>
+	</thead>
+	<tbody>
+	<% @pendings.each do |pending| %>
+		<tr>
+		<td><%= pending.task_name %></td>
+		<td><%= pending.task_time_in_minutes %></td>
+		<td><%= pending.status %></td>			
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to 'new task' , new_path %>

@@ -1,0 +1,5 @@
+<%= form_for @pending , url: {action: "create"}, html: {class:"nifty form"} do |f| %>
+  <%= f.text_field :task_name %>
+  <%= f.text_field :task_time_in_minutes %>
+  <%= f.submit "Create" %>
+<% end %>
