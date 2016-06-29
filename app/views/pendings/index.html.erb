@@ -11,10 +11,12 @@
 		<tr>
 		<td><%= pending.task_name %></td>
 		<td><%= pending.task_time_in_minutes %></td>
-		<td><%= pending.status %></td>			
+		<td><%= pending.status %></td>
+		<td><%= link_to 'delete', pendings_path(pending) , :method => :delete %> </td>
+
 		</tr>
 		<% end %>
 	</tbody>
 </table>
 
-<%= link_to 'new task' , new_path %>
+<%= link_to 'new task' , pendings_new_path %>

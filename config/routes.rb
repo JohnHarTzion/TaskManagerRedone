@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
+  root to: 'pendings#index'
 
-  get 'pendings' , to: 'pendings#index'
-  get '/index' , to: 'pendings#index'
-  get '/new' , to: 'pendings#new'
-  get '/index' , to: 'pendings#show'
+  get '/pendings' , to: 'pendings#index'
+  get '/pendings/new' , to: 'pendings#new'
+  post '/pendings' , to: 'pendings#create'
+  get '/pendings/:id' , to: 'pendings#show'
+  
+  delete '/pendings/:id' , to: 'pendings#destroy'
 
   
-  post '/pendings' , to: 'pendings#create'
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.

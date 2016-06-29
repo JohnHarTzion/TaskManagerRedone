@@ -9,18 +9,25 @@ class PendingsController < ApplicationController
 
 	def create
 		@pending = Pending.create(pending_params)
-		redirect_to action:'show'
-
+		if @pending.save
+			redirect_to root_url, :notice => 'created'
+		end
 	end
 
 	def show
-		@pending = Pendings.find(params[:id])
+		@pending = Pending.find(params[:id])
+	end
+
+	def destroy
+		@pending = Pending.find(params[:id])
+		@pending.destroy
+		redirect_to 
 	end
 
 	private
 
 	def pending_params
-		params.require(:pending).permit(:task_name , :task_time_in_minutes , :status)
+		params.require(:pending).permit( :task_name , :task_time_in_minutes , :status)
 	end
 
 	
