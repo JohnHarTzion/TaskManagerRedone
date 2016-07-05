@@ -15,7 +15,8 @@
 		<td><%= pending.task_time_in_minutes %></td>
 		<td><%= pending.status %></td>
 		<td><%= link_to 'delete', pending, method: :delete %> </td>
-		<td><%= button_to 'Start' , pending, :method => :update %></td>
+		<td><%= button_to 'Start' , pending , method: :put%></td>
+		<td> <%= link_to 'edit' , edit_path(pending) %></td>
 		
 
 		</tr>
@@ -39,7 +40,7 @@
 			<td><%= progress.task_name %></td>
 			<td><%= progress.task_time_in_minutes %></td>
 			<td><%= progress.status %></td>
-			<td><%= button_to 'undo' , progress, :method => :undo %></td>
+			<td><%= button_to 'undo' , progress , method: :put %></td>
 		</tr>
 		<% end %>
 	</tbody>

@@ -25,16 +25,38 @@ class PendingsController < ApplicationController
 		redirect_to pendings_url
 	end
 
+	def edit
+		@pendingedit = Pending.find(params[:id])
+	end
+
 	def update
 		@pending = Pending.find(params[:id])
-		@pending.update(status: 'in progress')
-		redirect_to pendings_url
+		if @pending.update(pending_params)
+			redirect_to pendings_url
+		end
 	end
+
+	def start
+		@pending = Pending.find(params[:id])
+		if @pending.status = 'pending'
+			@pending.status ='in progress'
+			@pending.save
+			redirect_to pendings_url
+		end
+	end
+
 	def undo
-		@pending = Pending.find_by(params[:id])
-		@pending.update(status: 'pending')
-		redirect_to pendings_url
+		@pending = Pending.find(params[:id])
+		if @pending.status = 'in progress'
+			@pending.status = 'pending'
+			@pending.save
+			redirect_to pendings_url
+		end
 	end
+
+	
+	
+	
 
 	private
 
