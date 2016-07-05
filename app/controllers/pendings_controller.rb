@@ -1,6 +1,7 @@
 class PendingsController < ApplicationController
 	def index
-		@pendings = Pending.all
+		@pendings = Pending.where(status: 'pending')
+		@progressings = Pending.where(status: 'in progress')
 	end
 
 	def new
@@ -10,7 +11,7 @@ class PendingsController < ApplicationController
 	def create
 		@pending = Pending.create(pending_params)
 		if @pending.save
-			redirect_to root_url, :notice => 'created'
+			redirect_to pendings_url, :notice => 'created'
 		end
 	end
 
@@ -19,9 +20,20 @@ class PendingsController < ApplicationController
 	end
 
 	def destroy
-		@pending = Pending.find(params[:id])
+		@pending = Pending.find_by(params[:id])
 		@pending.destroy
-		redirect_to 
+		redirect_to pendings_url
+	end
+
+	def update
+		@pending = Pending.find(params[:id])
+		@pending.update(status: 'in progress')
+		redirect_to pendings_url
+	end
+	def undo
+		@pending = Pending.find_by(params[:id])
+		@pending.update(status: 'pending')
+		redirect_to pendings_url
 	end
 
 	private

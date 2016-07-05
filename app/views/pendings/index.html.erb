@@ -4,6 +4,8 @@
 			<td>Task Name</td>
 			<td>Task Time</td>
 			<td>Task Status</td>
+			<td>Task Delete</td>
+			<td>Task Start</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -12,11 +14,33 @@
 		<td><%= pending.task_name %></td>
 		<td><%= pending.task_time_in_minutes %></td>
 		<td><%= pending.status %></td>
-		<td><%= link_to 'delete', pendings_path(pending) , :method => :delete %> </td>
+		<td><%= link_to 'delete', pending, method: :delete %> </td>
+		<td><%= button_to 'Start' , pending, :method => :update %></td>
+		
 
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-
 <%= link_to 'new task' , pendings_new_path %>
+
+<table>
+	<thead>
+		<br><br><br><tr>
+			<td>Task Name:</td>
+			<td>Task Time:</td>
+			<td>Task Status:</td>
+			<td>Undo:</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @progressings.each do |progress| %>
+		<tr>
+			<td><%= progress.task_name %></td>
+			<td><%= progress.task_time_in_minutes %></td>
+			<td><%= progress.status %></td>
+			<td><%= button_to 'undo' , progress, :method => :undo %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

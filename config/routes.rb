@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-  root to: 'pendings#index'
 
-  get '/pendings' , to: 'pendings#index'
-  get '/pendings/new' , to: 'pendings#new'
-  post '/pendings' , to: 'pendings#create'
-  get '/pendings/:id' , to: 'pendings#show'
   
-  delete '/pendings/:id' , to: 'pendings#destroy'
+
+  get 'pendings' , to: 'pendings#index'
+  get 'pendings/new' , to: 'pendings#new'
+  post 'pendings' , to: 'pendings#create'
+  get 'pendings/:id' , to: 'pendings#show'
+  put 'pendings/:id', to: 'pendings#update' , as: 'update'
+  post 'pendings/:id' , to: 'pendings#update'
+  delete 'pendings/:id' , to: 'pendings#destroy' , as: 'pending'
+  put 'pendings/:id' , to: 'pendings#undo' , as: 'undo'
+  get 'pendings' , to: 'progressings#index'
+
 
   
   
