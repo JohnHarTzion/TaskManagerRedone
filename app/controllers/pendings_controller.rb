@@ -38,20 +38,15 @@ class PendingsController < ApplicationController
 
 	def start
 		@pending = Pending.find(params[:id])
-		if @pending.status = 'pending'
-			@pending.status ='in progress'
-			@pending.save
-			redirect_to pendings_url
-		end
+		@pending.update_attribute(:status , "in progress")
+		redirect_to pendings_url
+		
 	end
 
 	def undo
 		@pending = Pending.find(params[:id])
-		if @pending.status = 'in progress'
-			@pending.status = 'pending'
-			@pending.save
-			redirect_to pendings_url
-		end
+		@pending.update_attribute(:status , "pending")
+		redirect_to pendings_url
 	end
 
 	

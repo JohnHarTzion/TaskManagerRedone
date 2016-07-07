@@ -1,29 +1,30 @@
-<table>
-	<thead>
-		<tr>
-			<td>Task Name</td>
-			<td>Task Time</td>
-			<td>Task Status</td>
-			<td>Task Delete</td>
-			<td>Task Start</td>
+<table id: 'head'>
+	<thead >
+		<tr >
+			<td class="alert alert-success">Task Name:</td>
+			<td class="alert alert-success">Task Time:</td>
+			<td class="alert alert-success">Task Status:</td>
+			<td class="alert alert-success">Task Delete:</td>
+			<td class="alert alert-success">Task Start:</td>
+			<td class="alert alert-success">Task Edit:</td>
 		</tr>
 	</thead>
 	<tbody>
 	<% @pendings.each do |pending| %>
 		<tr>
-		<td><%= pending.task_name %></td>
-		<td><%= pending.task_time_in_minutes %></td>
-		<td><%= pending.status %></td>
-		<td><%= link_to 'delete', pending, method: :delete %> </td>
-		<td><%= button_to 'Start' , pending , method: :put%></td>
-		<td> <%= link_to 'edit' , edit_path(pending) %></td>
+		<td class="panel panel-default"><%= pending.task_name %></td>
+		<td class="panel panel-default"><%= pending.task_time_in_minutes %></td>
+		<td class="panel panel-default"><%= pending.status %></td>
+		<td class="panel panel-default"><%= link_to 'delete', pending,class: 'btn btn-primary btn-xs', method: :delete %> </td>
+		<td class="panel panel-default"><%= button_to 'Start' , pending , class: 'btn btn-primary btn-xs',  method: :put %></td>
+		<td class="panel panel-default"> <%= link_to 'edit' , edit_path(pending), class: 'btn btn-primary btn-xs'  %></td>
 		
 
 		</tr>
 		<% end %>
 	</tbody>
 </table>
-<%= link_to 'new task' , pendings_new_path %>
+<%= link_to 'new task' , pendings_new_path , class: 'btn btn-success' %>
 
 <table>
 	<thead>
