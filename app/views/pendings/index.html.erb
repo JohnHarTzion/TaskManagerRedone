@@ -1,6 +1,9 @@
+<nav class="navbar navbar-inverse">
+</nav>
+<p style="font-size: 40px" align = "center">Task Manager:</p>
 <table class='table table-bordered'>
-	<thead >
-		<tr >
+	<thead>
+		<tr>
 			<td style="font-weight:bold" align ="center">Task Name:</td>
 			<td style="font-weight:bold"  align ="center">Task Time:</td>
 			<td style="font-weight:bold"  align ="center">Task Status:</td>
@@ -24,15 +27,17 @@
 		<% end %>
 	</tbody>
 </table>
+<div align = "center">
 <%= link_to 'new task' , pendings_new_path , class: 'btn btn-success' %>
+</div>
 
-<table>
+<table class='table table-bordered'>
 	<thead>
 		<br><br><br><tr>
-			<td>Task Name:</td>
-			<td>Task Time:</td>
-			<td>Task Status:</td>
-			<td>Undo:</td>
+			<td style="font-weight:bold" align ="center">Task Name:</td>
+			<td style="font-weight:bold" align ="center">Task Time:</td>
+			<td style="font-weight:bold" align ="center">Task Status:</td>
+			<td style="font-weight:bold" align ="center">Undo:</td>
 		</tr>
 	</thead>
 	<tbody>
