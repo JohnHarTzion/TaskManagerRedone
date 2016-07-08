@@ -1,23 +1,23 @@
-<table id: 'head'>
+<table class='table table-bordered'>
 	<thead >
 		<tr >
-			<td class="alert alert-success">Task Name:</td>
-			<td class="alert alert-success">Task Time:</td>
-			<td class="alert alert-success">Task Status:</td>
-			<td class="alert alert-success">Task Delete:</td>
-			<td class="alert alert-success">Task Start:</td>
-			<td class="alert alert-success">Task Edit:</td>
+			<td style="font-weight:bold" align ="center">Task Name:</td>
+			<td style="font-weight:bold"  align ="center">Task Time:</td>
+			<td style="font-weight:bold"  align ="center">Task Status:</td>
+			<td style="font-weight:bold"  align ="center">Task Delete:</td>
+			<td style="font-weight:bold"  align ="center">Task Start:</td>
+			<td style="font-weight:bold"  align ="center">Task Edit:</td>
 		</tr>
 	</thead>
 	<tbody>
 	<% @pendings.each do |pending| %>
 		<tr>
-		<td class="panel panel-default"><%= pending.task_name %></td>
-		<td class="panel panel-default"><%= pending.task_time_in_minutes %></td>
-		<td class="panel panel-default"><%= pending.status %></td>
-		<td class="panel panel-default"><%= link_to 'delete', pending,class: 'btn btn-primary btn-xs', method: :delete %> </td>
-		<td class="panel panel-default"><%= button_to 'Start' , pending , class: 'btn btn-primary btn-xs',  method: :put %></td>
-		<td class="panel panel-default"> <%= link_to 'edit' , edit_path(pending), class: 'btn btn-primary btn-xs'  %></td>
+		<td class="panel panel-default" align ="center"><%= pending.task_name %></td>
+		<td class="panel panel-default" align ="center"><%= pending.task_time_in_minutes %></td>
+		<td class="panel panel-default" align ="center"><%= pending.status %></td>
+		<td class="panel panel-default" align ="center"><%= link_to 'delete', pending,class: 'btn btn-primary btn-xs', method: :delete %> </td>
+		<td class="panel panel-default" align ="center"><%= button_to 'Start' , pending , class: 'btn btn-primary btn-xs',  method: :put %></td>
+		<td class="panel panel-default" align ="center"> <%= link_to 'edit' , edit_path(pending), class: 'btn btn-primary btn-xs'  %></td>
 		
 
 		</tr>
