@@ -1,6 +1,9 @@
-Edit Task:
+<nav class="navbar navbar-inverse">
+</nav>
 
-<%= form_for @pendingedit do |f| %>
+<p style="font-size: 30px" align="center">Edit Task:</p>
+
+<%= form_for @pendingedit , :html => {:align => "center"} do |f| %>
   <%= f.label :task_name %> <br>
   <%= f.text_field :task_name %><br>
 
@@ -10,5 +13,5 @@ Edit Task:
   <%= f.label :status %><br>
   <%= f.text_field :status %><br>
 
-  <%= f.submit %>
+  <%= f.submit "edit", class:"btn btn-default", type:"button" %>
 <% end %>
