@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   patch 'pendings/:id', to: 'pendings#update' 
   post 'pendings/:id' , to: 'pendings#update'
   delete 'pendings/:id' , to: 'pendings#destroy' , as: 'pending'
-  put 'pendings/:id' , to: 'pendings#start'
-  put 'pendings/:id' , to: 'pendings#undo'
+  put 'pendings/:id/start' , to: 'pendings#start' , as: 'start'
+  put 'pendings/:id/undo' , to: 'pendings#undo' , as: 'undo'
   
   
 

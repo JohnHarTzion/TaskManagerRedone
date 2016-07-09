@@ -18,9 +18,9 @@
 		<td class="panel panel-default" align ="center"><%= pending.task_name %></td>
 		<td class="panel panel-default" align ="center"><%= pending.task_time_in_minutes %></td>
 		<td class="panel panel-default" align ="center"><%= pending.status %></td>
-		<td class="panel panel-default" align ="center"><%= link_to 'delete', pending,class: 'btn btn-primary btn-xs', method: :delete %> </td>
-		<td class="panel panel-default" align ="center"><%= button_to 'Start' , pending , class: 'btn btn-primary btn-xs',  method: :put %></td>
-		<td class="panel panel-default" align ="center"> <%= link_to 'edit' , edit_path(pending), class: 'btn btn-primary btn-xs'  %></td>
+		<td class="panel panel-default" align ="center"><%= link_to 'Delete', pending,class: 'btn btn-primary btn-xs', method: :delete %> </td>
+		<td class="panel panel-default" align ="center"><%= button_to 'Start' , start_path(pending) , class: 'btn btn-primary btn-xs',  method: :put %></td>
+		<td class="panel panel-default" align ="center"> <%= link_to 'Edit' , edit_path(pending), class: 'btn btn-primary btn-xs'  %></td>
 		
 
 		</tr>
@@ -28,7 +28,7 @@
 	</tbody>
 </table>
 <div align = "center">
-<%= link_to 'new task' , pendings_new_path , class: 'btn btn-success' %>
+<%= link_to 'New Task' , pendings_new_path , class: 'btn btn-success' %>
 </div>
 
 <table class='table table-bordered'>
@@ -46,7 +46,7 @@
 			<td><%= progress.task_name %></td>
 			<td><%= progress.task_time_in_minutes %></td>
 			<td><%= progress.status %></td>
-			<td><%= button_to 'undo' , progress , method: :put %></td>
+			<td><%= button_to 'undo' , undo_path(progress) , method: :put %></td>
 		</tr>
 		<% end %>
 	</tbody>
